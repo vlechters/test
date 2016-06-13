@@ -1,0 +1,204 @@
+@font-face {
+    font-family: Ubuntu;
+    src: url(Ubuntu-Regular.ttf);
+}
+@font-face {
+    font-family: UbuntuBold;
+    src: url(Ubuntu-Bold.ttf);
+}
+@font-face {
+    font-family: UbuntuLight;
+    src: url(Ubuntu-Light.ttf);
+}
+body{
+	font-family: 'Ubuntu',sans-serif;
+	margin: 140px 0 0 0;
+	background-image: url(straw.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}															/* -------BANNER------- */
+
+.top-bar{
+	position: fixed;
+	z-index: 9999;
+
+	height: 90px;
+	width: 100%;
+	top: 0px;
+
+	background-color: #A58B68;
+}
+.banner{
+	padding: 1px 12px 0;
+	background-color: #DCB886;
+	height: 82px;
+	max-width: 1500px;
+	margin: 12px auto 0;
+	border: 8px #AB7729 double;
+	border-radius: 12px;
+}
+																/* TOP-GREETING */
+.begroeting{
+	display: inline-block;
+	margin: 11px 20px 0px 0px;
+	padding: 10px 10px 10px 10px;
+	font-weight: 900;
+	border: 1px grey solid;
+	border-radius: 5px;
+	min-width: 140px;
+	max-width: 220px;
+	background-color: #FFFFDA;
+}
+.menu{															/* TOP-MENU */
+	display: inline-block;
+	padding: 0;
+	vertical-align: top;
+	margin: 5px 0 0 80px;
+	 /*height: 50px; */
+	/*display: none;*/
+}
+
+.menu li{													/* MENU-ITEMS */
+	margin: 0 20px;
+	text-align: center;
+	display: inline-block;
+	
+	/*border: outset 6px #f3f3d6;*/
+}
+.menu a{
+	background-color: yellow;
+	color: green;
+	text-decoration: none;
+}
+
+.menu img{
+	height: 39px;
+}
+#bewerken{
+	float: right;
+	opacity: 0.1;
+}
+#bewerken:hover{
+	opacity: 1;
+	transition: 2s all;
+	background-color: crimson;
+}
+																/* -------CONTENT------- */
+.content{
+	border: 7px #AB7729 double;
+	/* border: 7px #EADC8B outset; */
+	position: relative;
+	background-color: #D8D8AE;
+	max-width: 1000px;
+	min-width: 480px;
+	margin: 120px auto 30px;
+	padding: 50px 90px 40px;
+	border-radius: 12px;
+}
+																/* -------SLIDER------- */
+																/* SLIDER-CONTAINER */
+.slider-container{
+	position: relative;
+	/* width: 950px; */
+	margin: 0 auto;
+	border: outset 6px #f3f3d6;  /*#F6F6F6*/
+	/* border: outset 6px #EADC8B; */
+	border-radius: 0px;	
+}
+																/* SLIDESHOW-DIV */
+.cycle-slideshow{
+	/* width: 950px; */
+	position: relative;
+	overflow: hidden;
+}
+																/* IMAGES OF THE SLIDESHOW */
+.cycle-slideshow img{
+	width:100%;
+}
+																/* LEFT BUTTON */
+#Bl{
+	left: 10px;
+	padding: 0 4px 0 0;
+}
+																/* RIGHT BUTTON */
+#Br{
+	padding: 0 0 0 4px;
+	right:10px;
+}
+																/* BOTH BUTTONS */
+.SlideButton {
+	width: 50px; height: 50px;
+	position: absolute;
+	top: 45%;
+	z-index: 999;
+
+	border-radius: 100%;
+	background-color: rgba(1,54,54,1);
+	opacity: 0.5;
+	
+	text-align: center;
+	line-height: 41px;
+	font-weight:900;
+	font-size:37px;
+	color: gold;
+	text-decoration: none;
+}
+																/* BUTH BUTTONS ON-HOVER */
+.SlideButton:hover {
+	color: gold;
+	opacity: 1;
+	transition: 0.4s;
+	text-decoration: none;
+}
+																/* -------1E TEKSTSTUK------- */
+.content1{
+	margin: 30px 0 30px 0;
+	
+	padding: 0px 25px 25px;
+	border: 8px #FFFFDE outset;
+	/* border: 8px #EADC8B inset; */
+	background-color: #f3f3d6;;
+	border-radius: 15px;
+	color: #881C1C;
+	overflow: auto;
+}
+.content1 img{
+	float: left;
+	margin-right: 20px;
+}
+#Boxez{
+	padding: 27px;
+	border: 8px #FFFFDE outset;
+	border-radius: 15px ;
+}
+																/* BOXES */
+.boxes{
+	display: inline-table;
+	margin: 0 20px 40px 0;
+	background-color: #D2B487;
+	max-width: 442px;
+	min-width: 306px;
+
+	border-left:39px solid;
+	border-right:39px solid;
+	border-image-repeat: round;
+	border-radius: 52px;
+
+	border-image: url("rope3.png");
+	border-image-slice: 16;
+	border-image-width: 35px;
+	min-height:190px;
+	max-height: 550px;
+	/* border-image-outset: 50px; */
+	
+}
+																/* BOXES CONTENT */
+.boxes *{
+	padding: 5px;
+	border: 6px #EADC8B inset;
+	background-color: #f3f3d6;
+	border-radius: 10px;
+	opacity: 1;
+	color: #881C1C;
+	min-width: 100px;
+}

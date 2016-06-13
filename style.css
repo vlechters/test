@@ -2,20 +2,22 @@
     font-family: Ubuntu;
     src: url(Ubuntu-Regular.ttf);
 }
-@font-face {
+/*@font-face {
     font-family: UbuntuBold;
     src: url(Ubuntu-Bold.ttf);
 }
 @font-face {
     font-family: UbuntuLight;
     src: url(Ubuntu-Light.ttf);
-}
+}*/
 body{
 	font-family: 'Ubuntu',sans-serif;
 	margin: 140px 0 0 0;
 	background-image: url(straw.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
+	transition: margin-left 0.7s;
+
 }															/* -------BANNER------- */
 
 .top-bar{
@@ -28,14 +30,65 @@ body{
 
 	background-color: #A58B68;
 }
+.hamburger{
+	/*margin: 16px 15px 0 0; */
+	position: absolute;
+	bottom: 5px;
+	left: 14px;
+	color: maroon;
+	cursor: pointer;
+
+	/*vertical-align: top;*/
+}
+#sideMenu{
+	background-color: black;
+	border-right: 10px #a58b68 solid;
+	border: 15px 15px green solid;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 0px;
+	font-style: italic;
+	font-size: 20px;
+	transition: 0.7s;
+	overflow-x: hidden;
+	padding-top: 40px;
+	background-image: url('horizontal-cherry-wood.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+#sideMenu li{
+	transition: 0.35s;
+	color: #dcb886;
+	list-style: none;
+	display: block;
+	margin: 0 0 10px 25px;
+	width: 200px;
+	border-radius: 5px;
+	cursor: pointer;
+	text-shadow: 6px 10px 7px black;
+	line-height: 40px;
+	padding: 5px;
+	border: 3px solid rgba(0,0,0,0.2);
+}
+#sideMenu li:hover{
+	border: 3px solid #442600;
+	background-color: #633800;
+	background-size: cover;
+	color: rgba(200,200,200,1);
+}
 .banner{
+	position: relative;
 	padding: 1px 12px 0;
 	background-color: #DCB886;
-	height: 82px;
-	max-width: 1500px;
+	/*height: 82px;*/
+	max-width: 1160px;
 	margin: 12px auto 0;
 	border: 8px #AB7729 double;
 	border-radius: 12px;
+	overflow: auto;
 }
 																/* TOP-GREETING */
 .begroeting{
@@ -50,38 +103,48 @@ body{
 	background-color: #FFFFDA;
 }
 .menu{															/* TOP-MENU */
-	display: inline-block;
+	display: block;
 	padding: 0;
 	vertical-align: top;
-	margin: 5px 0 0 80px;
+	margin: 10px 0 20px;															/* TOP-MENU */
+	min-width: 600px;															/* TOP-MENU */
+	float: right;
 	 /*height: 50px; */
 	/*display: none;*/
+	 /*outline: green solid; */
 }
 
 .menu li{													/* MENU-ITEMS */
-	margin: 0 20px;
+	margin: 0 14px;
 	text-align: center;
 	display: inline-block;
 	
-	/*border: outset 6px #f3f3d6;*/
+	width: 80px;
+	border: inset 5px #f3f3d6;
+	border-radius: 20px;
+	padding: 10px;
+	transition: 0.4s;
 }
 .menu a{
-	background-color: yellow;
-	color: green;
+	/*background-color: grey;*/
+	color: maroon;
 	text-decoration: none;
 }
-
-.menu img{
-	height: 39px;
+.menu li:hover{
+	border: outset 5px #f3f3d6;
+	background-color:maroon; 
+	color:#dcb886;
 }
+
+
 #bewerken{
 	float: right;
 	opacity: 0.1;
+	margin: 4px 2px;
 }
 #bewerken:hover{
 	opacity: 1;
 	transition: 2s all;
-	background-color: crimson;
 }
 																/* -------CONTENT------- */
 .content{
@@ -157,7 +220,7 @@ body{
 	padding: 0px 25px 25px;
 	border: 8px #FFFFDE outset;
 	/* border: 8px #EADC8B inset; */
-	background-color: #f3f3d6;;
+	background-color: #f3f3d6;
 	border-radius: 15px;
 	color: #881C1C;
 	overflow: auto;
@@ -193,7 +256,7 @@ body{
 	
 }
 																/* BOXES CONTENT */
-.boxes *{
+.boxes p, h3{
 	padding: 5px;
 	border: 6px #EADC8B inset;
 	background-color: #f3f3d6;
@@ -201,4 +264,15 @@ body{
 	opacity: 1;
 	color: #881C1C;
 	min-width: 100px;
+}
+.boxes .auteur{
+	height: 31px;
+	display: inline;
+	/*outline: 5px green solid;*/
+}
+.boxes .datum{
+	/*outline: 5px green solid;*/
+	display: inline;
+	text-align:right;
+	
 }

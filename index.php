@@ -1,3 +1,6 @@
+<?php
+require 'connecties\artikeldatabase.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,9 +49,9 @@
 
 			<i class="fa fa-bars fa-2x hamburger" onclick="OpenMenu()"></i>
 
-			<div class="begroeting">
-				Dag Mohammed! <i class="fa fa-chevron-circle-down"></i>
-			</div>
+			<a href="src/index.php"><div class="begroeting">
+							Log In <i class="fa fa-chevron-circle-down"></i>
+						</div></a>
 			<ul class="menu">
 				<a href="#">
 					<li class="home">
@@ -122,14 +125,30 @@
 		<div id="Boxez">
 			<div class="boxes" id="box1">
 				<h3>Litora torquent per conubia nostra.</h3>
-				<p><img src="logo.gif" >Mauris eu nibh vel turpis feugiat iaculis sit amet eu neque. Ut eget sem sit amet nisl viverra mattis. Aenean fringilla augue lorem, et ultricies eros bibendum ac. Sed sit amet aliquam massa, sit amet eleifend tortor. Etiam eu massa id ligula rutrum laoreet. Proin ut massa sollicitudin, suscipit ligula vitae, facilisis ipsum. Sed tincidunt sodales augue aliquet aliquam. Duis ut diam purus. In rhoncus felis enim.</p>
+
+					</p>
+
+
 				<div class="auteur">Mohammad Masoumi</div><div class="datum"> 13-05-2016</div><!-- auteur en datum aangemaakt -->
 			</div>
 			<div class="boxes" id="box2">
 				<h3>Dolor sit amet, consectetur, adipisci.</h3>
-				<p>Pellentesque leo purus, rutrum scelerisque pulvinar at, mollis a nibh. Suspendisse ut erat tincidunt, faucibus nibh aliquet, eleifend velit. Etiam non maximus metus. Donec justo mauris, tincidunt eu magna eget, tristique egestas tortor. Mauris id egestas diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent fermentum ante non aliquam gravida.
+				<p><?php
+					// Rows ophalen van DB 
+					$conn = ArtikelDatabase::getConnection();
+					$q = "SELECT auteur,afbeelding_url,titel,artikel_inhoud,datum_aangemaakt FROM artikels";
+					$stmt = $conn->prepare( $q );
+					$stmt->execute();
 
-</p>
+					while($row = $stmt->fetch()){
+						echo 	"<tr>";
+						echo	"<td style='color:#e20363; text-align:center; display:none'><input type='text' value='{$row['auteur']}' name='id' readonly></td>";
+						echo	"<td><input   type='text' value='{$row['afbeelding_url']}' name='afbeelding_url'></td>";
+						echo	"<td><input   type='text' value='{$row['titel']}' name='titel' ></td>";
+						echo	"<td ><input  type='text' value='{$row['artikel_inhoud']}' name='artikel_inhoud' ></td>";
+						echo	"<td ><input  type='text' value='{$row['datum_aangemaakt']}' name='datum_aangemaakt' ></td>";
+					}
+					?></p>
 			</div>
 			<div class="boxes" id="box3">
 				<h3>Arcu nec dapibus. Vivamus et ligula nec.</h3>

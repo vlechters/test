@@ -19,13 +19,38 @@ require 'connecties\artikeldatabase.php';
 	<script src="jquery-2.2.4.js" type="text/javascript"></script>	
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function(){
-	
+
+
+			click = true;
+			$('.hamburger').click(function(){
+				if(click){
+					$('#sideMenu').css('width','300px');
+					$('body').css('margin-left','300px');
+					$('body').toggleClass('open');
+					click = false;
+				}else{
+					$('#sideMenu').css('width','0');
+					$('body').css('margin-left','0');
+					click = true;
+				}
+			});
+
+			if(click==false){
+				$('body').click(function(){
+					$('#sideMenu').css('width','0');
+					$('body').css('margin-left','0');
+					click = true;
+				});
+				
+			};
+
+
+			
 			
 	
 		});
 		function OpenMenu(){
-			document.getElementById('sideMenu').style.width = '300px';
-			document.body.style.marginLeft = '300px';
+			document.body.style.backgroundColor = "rgba(0,0,0,1)";
 			
 		}
 	
@@ -34,40 +59,41 @@ require 'connecties\artikeldatabase.php';
 
 </head>
 									<!-- BEGIN-BODY -->
-<body>
+<body id="page">
 	<div class="top-bar">
 		<div id="sideMenu">
 			<ul>
-				<li><i class="fa fa-home fa-2x"></i>&nbsp;&nbsp;Home</li>
-				<li><i class="fa fa-info-circle fa-2x"></i>&nbsp;&nbsp;Informatie</li>
-				<li><i class="fa fa-newspaper-o fa-2x"></i>&nbsp;&nbsp;Nieuws</li>
-				<li><i class="fa fa-cog fa-2x"></i>&nbsp;&nbsp;Instellingen</li>
+				<a href="index.php">    <li><i class="fa fa-home fa-2x"></i>&nbsp;&nbsp;Home</li>    </a>
+				<a href="informatie.php">    <li><i class="fa fa-info-circle fa-2x"></i>&nbsp;&nbsp;Informatie</li>    </a>
+				<a href="nieuws.php">    <li><i class="fa fa-newspaper-o fa-2x"></i>&nbsp;&nbsp;Nieuws</li>    </a>
+				<a href="">    <li><i class="fa fa-cog fa-2x"></i>&nbsp;&nbsp;Instellingen</li>    </a>
 			</ul>
 		</div>
 
 		<div class="banner">
 
-			<i class="fa fa-bars fa-2x hamburger" onclick="OpenMenu()"></i>
+			<i class="fa fa-bars fa-2x hamburger"></i>
+			<!-- <i class="fa fa-bars fa-2x hamburger" onclick="OpenMenu()"></i> -->
 
 			<a href="src/index.php"><div class="begroeting">
 							Log In <i class="fa fa-chevron-circle-down"></i>
 						</div></a>
 			<ul class="menu">
-				<a href="#">
+				<a href="index.php">
 					<li class="home">
 						<i class="fa fa-home fa-3x"></i>
 						<br>Home
 					</li> | 
 				</a>
 
-				<a href="#">
+				<a href="informatie.php">
 					<li >
 						<i class="fa fa-info-circle fa-3x"></i>
 						<br>Informatie
 					</li> | 
 				</a>
 
-				<a href="#">
+				<a href="nieuws.php">
 					<li >
 						<i class="fa fa-newspaper-o fa-3x"></i>
 						<br>Nieuws
@@ -114,7 +140,7 @@ require 'connecties\artikeldatabase.php';
 		<br>
 		<br>								<!-- BEGIN HOOFD-INHOUD WEBSITE -->
 		<div class="content1">
-			<h2>Welkom op de website van de VERENIGING VAN VLECHTERS</h2>
+			<h2 onclick="OpenMenu()">Welkom op de website van de VERENIGING VAN VLECHTERS</h2>
 			<img src="logo.gif" alt="logo">
 				
 			<p>De Vereniging van Vlechters is een vereniging, die contacten tussen mensen met belangstelling voor het vlechten wil stimuleren en onderhouden.</p>

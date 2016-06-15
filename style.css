@@ -16,9 +16,20 @@ body{
 	background-image: url(straw.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	transition: margin-left 0.7s;
+	background-attachment: fixed;
+	transition: 0.7s;
+
 
 }
+body.open{
+	margin-left: 300px;
+	margin-right: 300px;
+}
+ .gig{
+	position: absolute;
+	width: 100%;
+	top: 0;
+} 
 															/* -------BANNER------- */
 .top-bar{
 	position: fixed;
@@ -39,8 +50,7 @@ body{
 	cursor: pointer;
 }
 #sideMenu{
-	border-right: 10px #7d6b51 solid;
-	border: 15px 15px green solid;
+	transition:  0.7s;
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -48,13 +58,16 @@ body{
 	width: 0px;
 	font-style: italic;
 	font-size: 20px;
-	transition: 0.7s;
 	overflow-x: hidden;
 	padding-top: 40px;
 	background-image: 
 	linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('horizontal-cherry-wood.png');
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+#sideMenu.open{
+	width: 300px;
+
 }
 #sideMenu a{
 	transition: 0.35s;
@@ -75,16 +88,35 @@ body{
 	background-color: #633800;
 	color: rgba(200,200,200,1);
 }
+#sideMenuBar{
+	transition: 0.7s;
+	position: fixed;
+	left: 0;
+	width: 5px;
+	margin-left: 0;
+	border-radius: 60px;
+	height: 100%;
+	background-color: #7d6b51;
+}
+#sideMenuBar:hover{
+	width: 20px;
+	cursor: pointer;
+}
+#sideMenuBar.open{
+	margin-left: 300px;
+}
 .banner{
 	position: relative;
 	padding: 1px 12px 0;
 	background-color: #DCB886;
 	/*height: 82px;*/
 	max-width: 1160px;
-	margin: 12px auto ;
+	margin: 12px auto;
 	border: 8px #AB7729 double;
 	border-radius: 12px;
 	overflow: auto;
+	min-width: 645px;
+	transition:  0.7s;
 }
 																/* TOP-GREETING */
 .begroeting{
@@ -103,12 +135,12 @@ body{
 	color: black;
 }
 .menu{															/* TOP-MENU */
-	display: block;
+	display: inline-block;
 	padding: 0;
 	vertical-align: top;
-	margin: 10px 0 20px;															/* TOP-MENU */
-	min-width: 600px;															/* TOP-MENU */
-	float: right;
+	margin: 10px auto 20px;
+	min-width: 600px;
+	/*float: right;*/
 	 /*height: 50px; */
 	/*display: none;*/
 	 /*outline: green solid; */
@@ -135,17 +167,6 @@ body{
 	background-color:maroon; 
 	color:#dcb886;
 }
-
-
-#bewerken{
-	float: right;
-	opacity: 0.1;
-	margin: 4px 2px;
-}
-#bewerken:hover{
-	opacity: 1;
-	transition: 2s all;
-}
 																/* -------CONTENT------- */
 .content{
 	border: 7px #AB7729 double;
@@ -157,6 +178,7 @@ body{
 	margin: 170px auto 30px;
 	padding: 50px 90px 40px;
 	border-radius: 12px;
+	transition:  0.7s;
 }
 																/* -------SLIDER------- */
 																/* SLIDER-CONTAINER */

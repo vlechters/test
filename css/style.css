@@ -1,6 +1,6 @@
 @font-face {
     font-family: Ubuntu;
-    src: url(Ubuntu-Regular.ttf);
+    src: url('font/Ubuntu-Regular.ttf');
 }
 /*@font-face {
     font-family: UbuntuBold;
@@ -13,11 +13,12 @@
 body{
 	font-family: 'Ubuntu',sans-serif;
 
-	background-image: url(straw.jpg);
+	background-image: url('img/straw.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	transition: 0.7s;
+	overflow-x: hidden;
 
 
 }
@@ -61,7 +62,7 @@ body.open{
 	overflow-x: hidden;
 	padding-top: 40px;
 	background-image: 
-	linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('horizontal-cherry-wood.png');
+	linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('img/horizontal-cherry-wood.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -269,7 +270,7 @@ body.open{
 	border-image-repeat: round;
 	border-radius: 52px;
 
-	border-image: url("rope3.png");
+	border-image: url('img/rope3.png');
 	border-image-slice: 16;
 	border-image-width: 35px;
 	min-height:190px;

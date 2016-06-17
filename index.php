@@ -9,14 +9,14 @@ require 'connecties\artikeldatabase.php';
 	
 									<!-- FILE-LINKSSSSSS -->
 <!-- CSS STYLE -->
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 
-	<link rel="stylesheet" href="FontAwesome\css\font-awesome.min.css"><!-- ICONSPACK FONT-AWESOME -->
+	<link rel="stylesheet" href="FontAwesome/css/font-awesome.min.css"><!-- ICONSPACK FONT-AWESOME -->
 
 
 	
 									<!-- J-QUERY -->
-	<script src="jquery-2.2.4.js" type="text/javascript"></script>	
+	<script src="js/jquery-2.2.4.js" type="text/javascript"></script>	
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function(){
 
@@ -29,13 +29,9 @@ require 'connecties\artikeldatabase.php';
 			
 	
 		});
-		function OpenMenu(){
-			document.body.style.backgroundColor = "rgba(0,0,0,1)";
-			
-		}
 	
 	</script>
-	<script src="jquery.cycle2.min.js" type="text/javascript"></script>	<!--SPECIAL J-QUERY VOOR SLIDER-->
+	<script src="js/jquery.cycle2.min.js" type="text/javascript"></script>	<!--SPECIAL J-QUERY VOOR SLIDER-->
 
 </head>
 									<!-- BEGIN-BODY -->
@@ -110,9 +106,9 @@ require 'connecties\artikeldatabase.php';
 				data-cycle-next="#Br"
 				>
 				<!-- <div class="cycle-pager"></div> -->
-					<img src="wallpaper1.jpg">
-					<img src="wallpaper2.jpg">
-					<img src="wallpaper3.jpg">
+					<img src="img/wallpaper1.jpg">
+					<img src="img/wallpaper2.jpg">
+					<img src="img/wallpaper3.jpg">
 				</div>
 
 				<a href=# class="SlideButton" id="Bl">&lang;</a>
@@ -124,7 +120,7 @@ require 'connecties\artikeldatabase.php';
 			<br>								<!-- BEGIN HOOFD-INHOUD WEBSITE -->
 			<div class="content1">
 				<h2 onclick="OpenMenu()">Welkom op de website van de VERENIGING VAN VLECHTERS</h2>
-				<img src="logo.gif" alt="logo">
+				<img src="img/logo.gif" alt="logo">
 					
 				<p>De Vereniging van Vlechters is een vereniging, die contacten tussen mensen met belangstelling voor het vlechten wil stimuleren en onderhouden.</p>
 				<p>Deze onderlinge contacten wil onze vereniging bevorderen door deze website, door het periodiek uitgeven van een Vlechtbulletin en door het organiseren van contactdagen.</p>

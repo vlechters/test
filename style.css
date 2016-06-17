@@ -12,7 +12,7 @@
 }*/
 body{
 	font-family: 'Ubuntu',sans-serif;
-	margin: 140px 0 0 0;
+
 	background-image: url(straw.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -23,7 +23,7 @@ body{
 }
 body.open{
 	margin-left: 300px;
-	margin-right: 300px;
+	overflow-x: hidden;
 }
  .gig{
 	position: absolute;

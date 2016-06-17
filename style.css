@@ -251,7 +251,7 @@ body.open{
 	float: left;
 	margin-right: 20px;
 }
-#Boxez{
+#AllBox{
 	padding: 27px;
 	border: 8px #FFFFDE outset;
 	border-radius: 15px ;
@@ -287,14 +287,13 @@ body.open{
 	color: #881C1C;
 	min-width: 100px;
 }
-.boxes .auteur{
-	height: 31px;
-	display: inline;
-	/*outline: 5px green solid;*/
-}
-.boxes .datum{
-	/*outline: 5px green solid;*/
-	display: inline;
-	text-align:right;
+.boxes span{
+	display: inline-block;
+	padding: 0 5px;
+	border:5px #eadc8b inset;
+	border-radius: 10px;
+	margin:0 0 10px;
 	
+}.boxes span:nth-child(5){
+	float: right;
 }

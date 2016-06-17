@@ -131,41 +131,66 @@ require 'connecties\artikeldatabase.php';
 			</div>
 			
 
-			<div id="Boxez">
+			<div id="AllBox">
 				<div class="boxes" id="box1">
-					<h3>Litora torquent per conubia nostra.</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quos placeat delectus mollitia magnam adipisci eum neque voluptas, iusto reprehenderit voluptate obcaecati excepturi dolor sint cumque hic officia impedit inventore. Ipsam magni odio atque a. Cum eaque illum nulla aliquid, vitae blanditiis dicta laudantium officiis voluptatem amet soluta delectus neque voluptatum cupiditate vero excepturi reprehenderit, ipsa porro id! Quo magni maiores suscipit adipisci excepturi cum consequatur perferendis odio temporibus. Repudiandae ratione natus maxime praesentium, quo, quas, esse inventore velit, nihil aperiam deserunt ipsa atque a ea blanditiis illum. Quasi neque ullam delectus similique, nam voluptas non vitae. Illo, tempore, maiores?</p>
-
-					<div class="auteur">Mohammad Masoumi</div><div class="datum"> 13-05-2016</div><!-- auteur en datum aangemaakt -->
+					<?php
+						// Rows ophalen van DB 
+						$conn = ArtikelDatabase::getConnection();
+						$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
+						$stmt = $conn->prepare( $q );
+						$stmt->execute(array(1));
+	
+						while($row = $stmt->fetch()){
+							echo "<h3>".$row['titel']."</h3>";
+							echo $row['artikel_inhoud']."<hr>";
+							echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
+						}
+					?>
 				</div>
 				<div class="boxes" id="box2">
-					<h3>Dolor sit amet, consectetur, adipisci.</h3>
-					<p>
-						<?php
-							// Rows ophalen van DB 
-							$conn = ArtikelDatabase::getConnection();
-							$q = "SELECT auteur,afbeelding_url,titel,artikel_inhoud,datum_aangemaakt FROM artikels";
-							$stmt = $conn->prepare( $q );
-							$stmt->execute();
-		
-							while($row = $stmt->fetch()){
-								echo 	"<tr>";
-								echo	"<td style='color:#e20363; text-align:center; display:none'><input type='text' value='{$row['auteur']}' name='id' readonly></td>";
-								echo	"<td><input   type='text' value='{$row['afbeelding_url']}' name='afbeelding_url'></td>";
-								echo	"<td><input   type='text' value='{$row['titel']}' name='titel' ></td>";
-								echo	"<td ><input  type='text' value='{$row['artikel_inhoud']}' name='artikel_inhoud' ></td>";
-								echo	"<td ><input  type='text' value='{$row['datum_aangemaakt']}' name='datum_aangemaakt' ></td>";
-							}
-							?>
-						</p>
+					<?php
+						// Rows ophalen van DB 
+						$conn = ArtikelDatabase::getConnection();
+						$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
+						$stmt = $conn->prepare( $q );
+						$stmt->execute(array(2));
+	
+						while($row = $stmt->fetch()){
+							echo "<h3>".$row['titel']."</h3>";
+							echo "<p>".$row['artikel_inhoud']."</p><hr>";
+							echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
+						}
+					?>
 				</div>
 				<div class="boxes" id="box3">
-					<h3>Arcu nec dapibus. Vivamus et ligula nec.</h3>
-					<p>Pellentesque accumsan porta lacus, non aliquet erat venenatis at. Aenean varius, justo sit amet cursus semper, enim nulla egestas ante, sit amet auctor metus ligula sed quam. In convallis faucibus quam et dapibus. Suspendisse feugiat lorem neque, ut porta neque faucibus ac. Nullam varius convallis malesuada. Quisque consequat luctus arcu nec dapibus. Vivamus et ligula nec urna posuere ultrices pretium vitae ipsum. Maecenas at laoreet tortor.</p>
+					<?php
+						// Rows ophalen van DB 
+						$conn = ArtikelDatabase::getConnection();
+						$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
+						$stmt = $conn->prepare( $q );
+						$stmt->execute(array(3));
+	
+						while($row = $stmt->fetch()){
+							echo "<h3>".$row['titel']."</h3>";
+							echo "<p>".$row['artikel_inhoud']."</p><hr>";
+							echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
+						}
+					?>
 				</div>
 				<div class="boxes" id="box4">
-					<h3>Dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</h3>
-					<p>In felis justo, laoreet a tempus at, accumsan a sem. Suspendisse laoreet quis libero quis luctus. Praesent pulvinar pellentesque felis, in gravida dui. Etiam volutpat dignissim enim, et facilisis neque molestie a. Nam auctor velit sit amet velit pharetra gravida. Quisque vulputate lacus non arcu dignissim consectetur. Etiam vitae placerat est, sit amet efficitur dolor. Suspendisse aliquet libero quam, non venenatis eros sollicitudin sit amet. Vivamus auctor neque quis metus mattis venenatis.</p>
+					<?php
+						// Rows ophalen van DB 
+						$conn = ArtikelDatabase::getConnection();
+						$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
+						$stmt = $conn->prepare( $q );
+						$stmt->execute(array(4));
+	
+						while($row = $stmt->fetch()){
+							echo "<h3>".$row['titel']."</h3>";
+							echo "<p>".$row['artikel_inhoud']."</p><hr>";
+							echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
+						}
+					?>
 				</div>
 			</div>
 

@@ -302,12 +302,10 @@ body.open{
 }
 .boxes div span:nth-child(2){
 	float: right;
-	/*right: 0;*/
 	margin-top:30px;
 }
 .boxes div span:nth-child(1){
 	float: left;
-	/*left: 0;*/
 	margin-top:30px;
 }
 .boxes .arti_foot{
@@ -347,11 +345,11 @@ body.open{
 	background-color: #ececc9;
 	border-radius: 10px;
 	opacity: 1;
-	color: #881C1C;
-	min-width: 100px;
+	max-width: 800px;
+	overflow: auto;
 }
-.artikel_boxes div span{
-	/*position: relative;*/
+/* .artikel_boxes div span{
+	position: relative;
 	display: inline-block;
 	padding: 0 5px;
 	border:5px #eadc8b inset;
@@ -361,13 +359,13 @@ body.open{
 }
 .artikel_boxes div span:nth-child(2){
 	float: right;
-	/*right: 0;*/
+	right: 0;
 	margin-top:30px;
 }
 .artikel_boxes div span:nth-child(1){
 	float: left;
-	/*left: 0;*/
-	margin-top:30px;
+	left: 0;
+	margin-top:30px; */
 }
 .artikel_boxes .arti_foot{
 	width: 100%;

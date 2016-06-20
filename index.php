@@ -37,57 +37,9 @@ require 'connecties\artikeldatabase.php';
 									<!-- BEGIN-BODY -->
 <body>
 
-	<div class="top-bar">
-		<div id="sideMenu">
-			<ul>
-				<a href="index.php">    <li><i class="fa fa-home fa-2x"></i>&nbsp;&nbsp;Home</li>    </a>
-				<a href="informatie.php">    <li><i class="fa fa-info-circle fa-2x"></i>&nbsp;&nbsp;Informatie</li>    </a>
-				<a href="nieuws.php">    <li><i class="fa fa-newspaper-o fa-2x"></i>&nbsp;&nbsp;Nieuws</li>    </a>
-				<a href="">    <li><i class="fa fa-cog fa-2x"></i>&nbsp;&nbsp;Instellingen</li>    </a>
-			</ul>
-		</div>
-		<div id="sideMenuBar"></div>
-
-		<div class="banner">
-
-			<i class="fa fa-bars fa-2x hamburger"></i>
-			<!-- <i class="fa fa-bars fa-2x hamburger" onclick="OpenMenu()"></i> -->
-
-			<a href="src/index.php"><div class="begroeting">
-							Log In <i class="fa fa-chevron-circle-down"></i>
-						</div></a>
-			<ul class="menu">
-				<a href="index.php">
-					<li class="home">
-						<i class="fa fa-home fa-3x"></i>
-						<br>Home
-					</li> | 
-				</a>
-
-				<a href="informatie.php">
-					<li >
-						<i class="fa fa-info-circle fa-3x"></i>
-						<br>Informatie
-					</li> | 
-				</a>
-
-				<a href="artikelen.php">
-					<li >
-						<i class="fa fa-newspaper-o fa-3x"></i>
-						<br>Artikelen
-					</li> | 
-				</a>
-				
-				<a href="#">
-					<li class="settings">
-						<i class="fa fa-cog fa-3x"></i>
-						<br>Instellingen
-					</li>
-				</a>
-			</ul>
-			
-		</div>
-	</div>
+	<?php
+	require('header+side_menu.php');
+	?>
 	
 
 	
@@ -148,53 +100,23 @@ require 'connecties\artikeldatabase.php';
 					</div>
 					<div class="boxes" id="box2">
 						<div class="styled">
-							<?php
-								// Rows ophalen van DB 
-								$conn = ArtikelDatabase::getConnection();
-								$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
-								$stmt = $conn->prepare( $q );
-								$stmt->execute(array(75));
-			
-								while($row = $stmt->fetch()){
-									echo "<h3>".$row['titel']."</h3>";
-									echo "<p>".$row['artikel_inhoud']."</p>";
-									echo "<div class='arti_foot'><span class='auteur'>".$row['auteur']."</span><span class='dat_aan'>".$row['datum_aangemaakt']."</span></div>";
-								}
-							?>
+							
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, saepe quos commodi, quaerat ut quod fugiat harum! Veritatis labore veniam, id iure iste, praesentium est doloremque velit, dolorum pariatur sint?
+							
 						</div>
 					</div>
 					<div class="boxes" id="box3">
 						<div class="styled">
-							<?php
-								// Rows ophalen van DB 
-								$conn = ArtikelDatabase::getConnection();
-								$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
-								$stmt = $conn->prepare( $q );
-								$stmt->execute(array(76));
-			
-								while($row = $stmt->fetch()){
-									echo "<h3>".$row['titel']."</h3>";
-									echo "<p>".$row['artikel_inhoud']."</p><hr>";
-									echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
-								}
-							?>
+							
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, saepe. Commodi recusandae deleniti quos illo dolorum libero qui cupiditate beatae velit, quam repudiandae est, illum hic error fugit nostrum necessitatibus?
+							
 						</div>
 					</div>
 					<div class="boxes" id="box4">
 						<div class="styled">
-							<?php
-								// Rows ophalen van DB 
-								$conn = ArtikelDatabase::getConnection();
-								$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
-								$stmt = $conn->prepare( $q );
-								$stmt->execute(array(77));
-			
-								while($row = $stmt->fetch()){
-									echo "<h3>".$row['titel']."</h3>";
-									echo "<p>".$row['artikel_inhoud']."</p><hr>";
-									echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
-								}
-							?>
+							
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, ea numquam sint dicta doloremque harum cupiditate eum ducimus possimus officiis quas dolor, deserunt commodi ipsam impedit consequuntur. Assumenda, quia, saepe.
+							
 						</div>
 					</div>
 				</div>

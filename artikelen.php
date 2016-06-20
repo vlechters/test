@@ -1,6 +1,6 @@
 <?php
 require ('connecties/artikeldatabase.php');
-require("src/toolkit.php") 	; 
+require("../../mohammad_login/src/toolkit.php") 	; 
 require 'connecties/databaseconnection.php';
 /*$artikel_id = 0;
 

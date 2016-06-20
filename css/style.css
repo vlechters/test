@@ -177,9 +177,9 @@ body.open{
 	position: relative;
 	background-color: #D8D8AE;
 	max-width: 1000px;
-	min-width: 480px;
+	min-width: 600px;
 	margin: 185px auto 30px;
-	padding: 50px 90px 40px;
+	padding: 40px 30px 40px;
 	border-radius: 12px;
 	transition:  0.7s;
 }
@@ -255,7 +255,7 @@ body.open{
 	margin-right: 20px;
 }
 #AllBox{
-	padding: 27px;
+	padding: 50px 27px 25px;
 	border: 8px #FFFFDE outset;
 	border-radius: 15px ;
 }
@@ -317,11 +317,7 @@ body.open{
 
 
 /* ------------------------------------ */
-#artikel_AllBox{
-	padding: 27px;
-	border: 8px #FFFFDE outset;
-	border-radius: 15px ;
-}
+
 
 .artikel_boxes{
 	display: inline-table;
@@ -348,7 +344,7 @@ body.open{
 .artikel_boxes div.styled{
 	padding: 0 10px;
 	border: 6px #EADC8B inset;
-	background-color: #f3f3d6;
+	background-color: #ececc9;
 	border-radius: 10px;
 	opacity: 1;
 	color: #881C1C;

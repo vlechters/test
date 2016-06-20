@@ -1,89 +1,99 @@
 <?php
-
 require("toolkit.php"); 
+require("databaseconnection.php"); 
+require("artikeldatabase.php");
 require("shared_header.php");
-require("shared_taglinks.php");
 
 
-
-//(functie in tookit.php) Er wordt gekeken naar wie een toestemming heeft om deze pagina te kunnen zien
 checkCredentials([
-	ROLE_SUPER_ADMIN,
-	ROLE_ADMIN,
-	ROLE_CLIENT
-	]) or die();
-	?>
+    ROLE_SUPER_ADMIN,
+    ROLE_ADMIN,
+    ROLE_CLIENT
+]) or die(); 
+?>
 
-
-
-	<!DOCTYPE html>
-	<html>
+<!DOCTYPE html>
+<html>
 	<head>
-	 <meta charset="utf-8">
-	 <script src="../ckeditor/ckeditor.js"></script>
+		<title>Account(s) bewerken</title>
+		<?php require("shared_taglinks.php"); ?>
+</head>
  
 
-		<title>Artikelbeheer</title>
-		<style>
+<body>
+	<div id="top-navigation">
+
+<?php
+// Rows ophalen van DB 
+$conn = ArtikelDatabase::getConnection();
+$q = "SELECT artikel_id,titel,artikel_inhoud,auteur,datum_aangemaakt FROM artikels # WHERE rollen =0;";
+$stmt = $conn->prepare( $q );
+$stmt->execute();
+$count = $stmt->rowCount();
+print_r($count);
+?>
 
 
-input[type="text"]{
-   font-size: 1.5em !important;
-}
+<div id="box">
+<!-- Table -->
+<center>
+	<table>
+		<thead>
+			<tr>
+			<!--<th>ID <br> </th>-->
+			<th style="padding:10px" >Artikel ID <br></th>
+				<th style="padding:10px" >Auteur <br></th>
+				<th style="padding:10px">Titel<br></th>
+				<th style="padding:10px">Artikel inhoud<br></th>
+				<th style="padding:10px">Bewerken<br></th>
+				<th style="padding:10px">Verwijderen<br></th>
+			</tr>
+		</thead>
+			<tbody>
+</div>
 
-
-::-webkit-input-placeholder {
- font-size:1.5em !important;
-}
-:-moz-placeholder { /* voor Firefox 18- */
- font-size:1.5em !important;}
-
-::-moz-placeholder {  /* voor Firefox 19+ */
- font-size:1.5em !important;}
-
-:-ms-input-placeholder {  
- font-size:1.5em !important;} 
-			
-
-		</style>
-
-	</head>
-
-	<body> 
-
-
-		<div id="artikels">
-
-			<form name="artikelbeheer" method="POST" action="artikel_verzenden.php">
-			
-			<br>
-				<input type="text" placeholder="Titel..." name="titel" required>
-	
-				<textarea id="artikel_inhoud" name="artikel_inhoud" cols="9" rows="9"></textarea>
-				<script>
-                // Replace the <textarea id="editor1"> with a CKEditor
-                // instance, using default configuration.
-                CKEDITOR.replace( 'artikel_inhoud' );
-            </script>
-				<center>
-
-				<br>
-					<input type="submit" name="submit">
-					<br><br>
-
-				</textarea>
+<?php
+while($row = $stmt->fetch()){
+		$artikel_id=$row['artikel_id'];
+		echo 	"<tr>";
+		echo	"<form id='submit_form' name='submit_form' action='update.php' method='post'>";
+		echo	"<td style='color:#e20363; text-align:center;'><input type='text' value='{$row['artikel_id']}' name='artikel_id' readonly></td>";
+		echo	"<td id='usrn'><input style='width:80%' type='text' value='{$row['auteur']}' name='auteur' readonly></td>";
+				echo	"<td id='usrn'><input style='width:80%' type='text' value='{$row['titel']}' name='titel'></td>";
+						echo	"<td id='usrn'><input id='inhoud_focus' style='width:80%' type='text' value='{$row['artikel_inhoud']}' name='artikel_inhoud'></td>";
 
 
 
-
-			</form>
-		</center>
-	</div>
+							echo	'<td id="submit_form"><a href="artikel_bewerken.php?artikel_id='.$row['artikel_id'].'"><img title="Artikel Verwijderen" style="padding:1px;  float:right; margin-right:30%" id="bewerken" src="images/bewerken.png" width="35px"</a></td>';
 
 
+		echo	'<td><a href="delete.php?artikel_id='.$artikel_id.'"><img title="Verwijderen" style="padding:5px; margin-left:7% float:left" id="remove_user" src="images/remove.png" width="35px"</a></td>';
 
-</body>
 
-<footer>
-</footer>
-</html>
+
+		echo 	"</form>";
+		echo '<center>';
+		echo	'</center>';
+		echo	"</tr>";
+		
+	};
+?>
+ 
+			</tbody>
+		</thead>
+	</table>
+</div>
+</div>
+
+
+
+<!--?php if (checkCredentials([
+    ROLE_SUPER_ADMIN,
+    ROLE_ADMIN
+])){
+		include_once('accountbeheer_admin.php');
+		}
+		?-->
+
+</div>
+<hr>

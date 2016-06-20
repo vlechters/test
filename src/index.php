@@ -99,6 +99,9 @@ else{
 	padding: 15px;
 	background-color: rgba(255,255,255,0.3);
 	};
+
+
+
 </style>
 </head>
    
@@ -122,7 +125,7 @@ else{
 
 <center>
 	<div id="home">
-		<br><a href="../index.php" class='terug'><img src='images/terug.png' width='40px' title='Terug naar Home'><br>Terug</a></div>
+		<br><a href="" class='terug'><img src='images/terug.png' width='40px' title='Terug naar Home'><br>Terug</a></div>
 </center> 
 </div>
 </div>

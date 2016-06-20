@@ -5,7 +5,14 @@
 
 CKEDITOR.editorConfig = function( config ) {
 	config.language = 'nl';
-    config.uiColor = '#cbbfa9';
+    config.uiColor = 'rgba(255,255,255,0.5)';
+    config.width = '60%';   // CSS unit.
+    config.height = '55%';
+    config.maxHeight = 100;
+    config.toolbarStartupExpanded = false;
+    config.toolbarCanCollapse = false;
+    config.colorButton_colors = '00923E,F8C100,28166F';
+    
 	// Define changes to default configuration here.
 	// For complete reference see:
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config

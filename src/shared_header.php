@@ -1,9 +1,16 @@
 <?php
 session_start();
 ?>
+	<div class="welkom"></div> 
 
+</div>
 <!-- Rechtsboven - De log uit knop -->
-<div class="loguit"><a title="Uitloggen" href="logout.php"><img width="73%" src="images/logout23.png" onmouseover="this.src='images/logout2.png';" onmouseout="this.src='images/logout23.png';" /></a></div>
+<div class="loguit"><a title="Uitloggen" href="logout.php"><img width="73%" src="images/loguit.png" onmouseover="this.src='images/loguit2.png';" onmouseout="this.src='images/loguit.png';" /></a></div>
+
+
+<!-- Linksboven - Home knop -->
+<div class="home"><a title="Home" href="home.php"><img width="73%" src="images/home2.png" onmouseover="this.src='images/home.png';" onmouseout="this.src='images/home2.png';" /></a></div>
+
 
  <!-- Teller voor automatische uitlog -->
 <div id='countdown'></div>
@@ -40,7 +47,7 @@ $rol=$_SESSION['rollen'];
 		$rol="onbekend";
 	};
 ?> 
-</div
+</div>
 
 
 
@@ -53,3 +60,4 @@ $rol=$_SESSION['rollen'];
 	'</p></center></div>' ; ?>
 	</div>
 <hr>
+</div>

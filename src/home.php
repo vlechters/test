@@ -20,18 +20,23 @@ checkCredentials([
 
 <body> 
 <div id="framework">
-<br>
-<center><img src="images/logo.png" width='50%'><hr></center>
+
+<center><img style="min-width:180px" src="images/logo.png" width='50%'><hr></center>
 <br>
 
-<div id="top-navigation-home">
+
 <center>
 <div id="blur">
-<li><a href='artikelbeheer.php'><div class="intake"><br><img src="images/form.png" width="23%" /><p style="color:#fe6300" id="p1">Artikels plaatsen</p></a></li><br>
-<li><a href='contentbeheer.php'><div class="intakes_inzien"><br><img src="images/content_beheer.png" width="21%" /><p style="color:#fe6300" id="p1">Contentbeheer</p></div></a></li></div>
+
+<li><a href='artikel_toevoegen.php'>
+<div class="artikel_toevoegen"><br><img src="images/form.png" width="23%" /><p style="color:#fe6300" id="p1">Artikel plaatsen</p></a></li><br>
+
+<li><a href='contentbeheer.php'><div class="artikel_beheer"><br><img src="images/artikelbeheer.png" width="23%" /><p style="color:#fe6300" id="p2">Artikelbeheer</p></div></a></li><br><hr>
 
 </div>
+
 </div>
+
 </div> 
 </center>
 <footer></footer>

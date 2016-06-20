@@ -1,23 +1,31 @@
 <?php
+    require 'artikeldatabase.php';
     require 'databaseconnection.php';
-    $id = 0;
+    require 'toolkit.php';
+    $artikel_id = 0;
      
-if (!empty($_GET['id'])) {
-		$id = $_REQUEST['id'];
+if (!empty($_GET['artikel_id'])) {
+		$artikel_id = $_REQUEST['artikel_id'];
 	};
      
      
-if (isset($_POST['submit'])) {
-		$conn = DatabaseConnection::getConnection();
-		$id = $_POST['id'];
-		$sqlDelete = "DELETE FROM cms_login WHERE rollen !=1 AND rollen !=2 AND id = :id";
+if (isset($_POST['submit'])) {  // Als er op OK wordt gedrukt, verwijder dan de record
+
+        $conn = ArtikelDatabase::getConnection();
+        $artikel_id = $_POST['artikel_id'];
+ 		$sqlDelete = "DELETE FROM artikels WHERE  artikel_id = :artikel_id";
 		$preparedStatement = $conn->prepare($sqlDelete);
-		$preparedStatement->execute(array(':id' => $id));
-		echo "<script>window.location.href = 'accountbeheer.php';</script>";
+		$preparedStatement->execute(array(':artikel_id' => $artikel_id));
+
+    if($sqlDelete){
+        echo "<script>window.location.href = 'contentbeheer.php';</script>";
+        
+    }
+
 	}
 	
-	else if (isset($_POST['cancel'])) {
-		echo "<script>window.location.href = 'accountbeheer.php';</script>";
+	else if (isset($_POST['cancel'])) { // Als er op cancel gedrukt wordt, ga dan terug 
+		echo "<script>window.location.href = 'contentbeheer.php';</script>";
 	}
 	
 	else{
@@ -62,8 +70,8 @@ input[type="button"]:hover{
 <body>
 <center>
     <form action="delete.php" method="POST">
-    <input type="hidden" name="id" value="<?php echo $id;?>"/>
-    <p>Gebruiker verwijderen ?</p>
+    <input type="hidden" name="artikel_id" value="<?php echo $artikel_id;?>"/>
+    <p>Artikel <?php echo $artikel_id ?> verwijderen ?</p>
     <button type="submit" name="submit">Bevestigen</button>
     <button type="submit" name="cancel">Annuleren</button>
     </form>

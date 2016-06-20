@@ -1,3 +1,14 @@
+$count = $stmt->fetchColumn();
+					if($count==0){
+					echo "<script>alert('Er zijn geen artikels gevonden. Plaats een artikel toe in de hoofdmenu')</script>";
+					echo "<script>window.location = 'home.php';</script>";
+			}
+
+
+
+
+
+
 <?php
 require("cookie.php");
 require("toolkit.php");  

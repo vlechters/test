@@ -1,69 +1,62 @@
 <?php
 require("toolkit.php"); 
 require("databaseconnection.php"); 
+require("artikeldatabase.php"); 
 require("shared_header.php");
-session_start();
+
 //(functie in tookit.php) Er wordt gekeken naar wie een toestemming heeft om deze pagina te kunnen zien
 checkCredentials([
     ROLE_SUPER_ADMIN,
-    ROLE_ADMIN
+    ROLE_ADMIN,
+    ROLE_CLIENT
 ]) or die(); 
 ?>
 
 <?php
-if(isset($_POST['username'])){
-		$conn = DatabaseConnection::getConnection();
-		$sql = "UPDATE `cms_login` SET `gebruikersnaam` = :username WHERE id = :id";
-		$statement = $conn-> prepare($sql);
-		$statement->bindValue(':id', $_POST['id']);
-		$statement->bindValue(':username', $_POST['username']);
-		$update = $statement->execute();
 
-			if($update){
-				header('Location: accountbeheer.php'); 
-			}
+date_default_timezone_set("Europe/Amsterdam"); // Standaard tijdzone instellen
+$datum_aangepast = date('Y/m/d H:i:s');
+$titel = htmlspecialchars($_POST['titel'], ENT_QUOTES); // Formatting voor speciale karakters en aanhalingtekens 
+$artikel_inhoud =  $_POST['artikel_inhoud'];  // Formatting voor speciale karakters en aanhalingtekens 
+$auteur = $_SESSION["gebruikersnaam"];
+
+// htmlspecialchars($_POST['artikel_inhoud'], ENT_QUOTES);
+
+
+// UPDATE TITEL
+if(isset($_POST['titel'])){   
+		$conn = ArtikelDatabase::getConnection();
+		$sql = "UPDATE `artikels` SET `titel` = :titel WHERE artikel_id = :artikel_id";
+		$statement = $conn-> prepare($sql);
+		$statement->bindValue(':artikel_id', $_POST['artikel_id']);
+		$statement->bindValue(':titel', $_POST['titel']);
+	    $statement->execute();
+		$conn = null; // sluit connectie
+
+
+		$conn = ArtikelDatabase::getConnection();
+		$sql = "UPDATE `artikels` SET `datum_aangepast` = :datum_aangepast WHERE artikel_id = :artikel_id";
+		$statement = $conn-> prepare($sql);
+		$statement->bindValue(':artikel_id', $_POST['artikel_id']);
+		$statement->bindValue(':datum_aangepast', $datum_aangepast);
+	    $statement->execute();
+		$conn = null; 
+			
 };
 
-
-if(isset($_POST['admin_username'])){
-		$conn = DatabaseConnection::getConnection();
-		$sql = "UPDATE `cms_login` SET `gebruikersnaam` = :admin_username WHERE id = :id";
+// UPDATE ARTIKEL
+if(isset($_POST['artikel_inhoud'])){
+		$conn = ArtikelDatabase::getConnection();
+		$sql = "UPDATE `artikels` SET `artikel_inhoud` = :artikel_inhoud WHERE artikel_id = :artikel_id";
 		$statement = $conn-> prepare($sql);
-		$statement->bindValue(':id', $_POST['id']);
-		$statement->bindValue(':admin_username', $_POST['admin_username']);
+		$statement->bindValue(':artikel_id', $_POST['artikel_id']);
+		$statement->bindValue(':artikel_inhoud', $_POST['artikel_inhoud']);
 		$update = $statement->execute();
+		$conn = null; // sluit connectie
 
 			if($update){
-				header('Location: accountbeheer.php'); 
+				header('Location: contentbeheer.php'); 
 			}
 };	
 
-
-
-if(isset($_POST['password'])){
-		$conn = DatabaseConnection::getConnection();
-		$sql = "UPDATE `cms_login` SET `wachtwoord` = :password WHERE id = :id";
-		$statement = $conn-> prepare($sql);
-		$statement->bindValue(':id', $_POST['id']);
-		$statement->bindValue(':password', $_POST['password']);
-		$update = $statement->execute();
-
-			if($update){
-				header('Location: accountbeheer.php'); 
-			}
-};
-
-
-if(isset($_POST['admin_password'])){
-		$conn = DatabaseConnection::getConnection();
-		$sql = "UPDATE `cms_login` SET `wachtwoord` = :admin_password WHERE id = :id";
-		$statement = $conn-> prepare($sql);
-		$statement->bindValue(':id', $_POST['id']);
-		$statement->bindValue(':admin_password', $_POST['admin_password']);
-		$update = $statement->execute();
-		
-			if($update){
-				header('Location: accountbeheer.php'); 
-			}
-};
 ?>

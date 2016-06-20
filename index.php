@@ -71,10 +71,10 @@ require 'connecties\artikeldatabase.php';
 					</li> | 
 				</a>
 
-				<a href="nieuws.php">
+				<a href="artikelen.php">
 					<li >
 						<i class="fa fa-newspaper-o fa-3x"></i>
-						<br>Nieuws
+						<br>Artikelen
 					</li> | 
 				</a>
 				
@@ -129,64 +129,72 @@ require 'connecties\artikeldatabase.php';
 
 			<div id="AllBox">
 				<div class="boxes" id="box1">
-					<?php
-						// Rows ophalen van DB 
-						$conn = ArtikelDatabase::getConnection();
-						$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
-						$stmt = $conn->prepare( $q );
-						$stmt->execute(array(1));
-	
-						while($row = $stmt->fetch()){
-							echo "<h3>".$row['titel']."</h3>";
-							echo $row['artikel_inhoud']."<hr>";
-							echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
-						}
-					?>
+					<div class="styled">
+						<?php
+							// Rows ophalen van DB 
+							$conn = ArtikelDatabase::getConnection();
+							$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
+							$stmt = $conn->prepare( $q );
+							$stmt->execute(array(74));
+		
+							while($row = $stmt->fetch()){
+								echo "<h3>".$row['titel']."</h3>";
+								echo $row['artikel_inhoud'];
+								echo "<div class='arti_foot'><span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span></div>";
+							}
+						?>
+					</div>
 				</div>
 				<div class="boxes" id="box2">
-					<?php
-						// Rows ophalen van DB 
-						$conn = ArtikelDatabase::getConnection();
-						$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
-						$stmt = $conn->prepare( $q );
-						$stmt->execute(array(2));
-	
-						while($row = $stmt->fetch()){
-							echo "<h3>".$row['titel']."</h3>";
-							echo "<p>".$row['artikel_inhoud']."</p><hr>";
-							echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
-						}
-					?>
+					<div class="styled">
+						<?php
+							// Rows ophalen van DB 
+							$conn = ArtikelDatabase::getConnection();
+							$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
+							$stmt = $conn->prepare( $q );
+							$stmt->execute(array(75));
+		
+							while($row = $stmt->fetch()){
+								echo "<h3>".$row['titel']."</h3>";
+								echo "<p>".$row['artikel_inhoud']."</p>";
+								echo "<div class='arti_foot'><span class='auteur'>".$row['auteur']."</span><span class='dat_aan'>".$row['datum_aangemaakt']."</span></div>";
+							}
+						?>
+					</div>
 				</div>
 				<div class="boxes" id="box3">
-					<?php
-						// Rows ophalen van DB 
-						$conn = ArtikelDatabase::getConnection();
-						$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
-						$stmt = $conn->prepare( $q );
-						$stmt->execute(array(3));
-	
-						while($row = $stmt->fetch()){
-							echo "<h3>".$row['titel']."</h3>";
-							echo "<p>".$row['artikel_inhoud']."</p><hr>";
-							echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
-						}
-					?>
+					<div class="styled">
+						<?php
+							// Rows ophalen van DB 
+							$conn = ArtikelDatabase::getConnection();
+							$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
+							$stmt = $conn->prepare( $q );
+							$stmt->execute(array(76));
+		
+							while($row = $stmt->fetch()){
+								echo "<h3>".$row['titel']."</h3>";
+								echo "<p>".$row['artikel_inhoud']."</p><hr>";
+								echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
+							}
+						?>
+					</div>
 				</div>
 				<div class="boxes" id="box4">
-					<?php
-						// Rows ophalen van DB 
-						$conn = ArtikelDatabase::getConnection();
-						$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
-						$stmt = $conn->prepare( $q );
-						$stmt->execute(array(4));
-	
-						while($row = $stmt->fetch()){
-							echo "<h3>".$row['titel']."</h3>";
-							echo "<p>".$row['artikel_inhoud']."</p><hr>";
-							echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
-						}
-					?>
+					<div class="styled">
+						<?php
+							// Rows ophalen van DB 
+							$conn = ArtikelDatabase::getConnection();
+							$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
+							$stmt = $conn->prepare( $q );
+							$stmt->execute(array(77));
+		
+							while($row = $stmt->fetch()){
+								echo "<h3>".$row['titel']."</h3>";
+								echo "<p>".$row['artikel_inhoud']."</p><hr>";
+								echo "<span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span>";
+							}
+						?>
+					</div>
 				</div>
 			</div>
 

@@ -1,3 +1,8 @@
+/*setTimeout(function() {
+    $('').fadeOut(3000);
+}, 3000); // <-- time in milliseconds */
+
+
 // password validation colors on 'account aanmaken'
 $(function() {
   $(".add_passw_confirm").hide();
@@ -76,7 +81,7 @@ $(function() {
 // if focus on 'gebruikersnaam', hide 'bevestiging'
 $(function() {
  $(".usrn").focus(function () {
-  $(".confirm_password").fadeOut(500);
+  alert("test");
 });
 });
 
@@ -468,6 +473,7 @@ $(function() {
 
 
 
+
 $(function() {
   $("#sliding_down").hover(function() {
    $("#sliding_down").attr("src", "images/omlaag2.png");
@@ -499,9 +505,9 @@ $(function() {
 
 
 
-
+// ARTIKEL TOEVOEGEN
 $(function() {
-  $(".intake").hover(function() {
+  $(".artikel_toevoegen").hover(function() {
    $("img", this).attr("src", "images/form2.png");
    $("#p1").css("color","#810000");
  },
@@ -512,46 +518,40 @@ $(function() {
 });
 
 
+
+// ARTIKELBEHEER
+$(function() {
+  $(".artikel_beheer").hover(function() {
+   $("img", this).attr("src", "images/artikelbeheer2.png");
+   $("#p2").css("color","#810000");
+ },
+ function() {
+   $("img", this).attr("src", "images/artikelbeheer.png");
+   $("#p2").css("color","#fe6300")
+ });
+});
+
+
+
+// CONTENTBEHEER
 $(function() {
   $(".content_beheer").hover(function() {
    $("img", this).attr("src", "images/content_beheer2.png");
-   $("#intakes_img").css("color","#810000");
+   $("#p3").css("color","#810000");
  },
  function() {
    $("img", this).attr("src", "images/content_beheer.png");
-   $("#intakes_img").css("color","#fe6300")
+   $("#p3").css("color","#fe6300")
  });
 });
 
-
-$(function() {
-  $(".acc_add").hover(function() {
-   $("img", this).attr("src", "images/acc_toevoegen2.png");
-   $("#acc_aanmaken").css("color","#95a100");
- }, function() {
-   $("img", this).attr("src", "images/add156.png");
-   $("#acc_aanmaken").css("color","#750403");
- });
-});
-
-
-
-$(function() {
-  $(".acc_delete").hover(function() {
-   $("img", this).attr("src", "images/acc_verwijder2.png");
-   $("#acc_del").css("color","#E20363");
- }, function() {
-   $("img", this).attr("src", "images/acc_verwijder.png");
-   $("#acc_del").css("color","#607D8B");
- });
-});
 
 
 
 
 $(function() {
   $(".terug").hover(function() {
-   $("img", this).attr("src", "images/terug.png");
+   $("img", this).attr("src", "images/terug2.png");
  }, function() {
    $("img", this).attr("src", "images/terug.png");
  });
@@ -594,7 +594,6 @@ $(function () {
 $(window).load(function() {
   $('form').sisyphus();
 });
-
 
 
 //SweetAlert.js - Alert box bij window load (intakeformulier)

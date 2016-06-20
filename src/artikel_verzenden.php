@@ -27,13 +27,13 @@ if (isset($_POST['submit'])) {
 		$sql = "INSERT IGNORE INTO `artikels` (datum_aangemaakt,titel,artikel_inhoud,auteur) VALUES ('$datum_aangemaakt','$titel','$artikel_inhoud', '$auteur')";
 		$stmt = $conn->prepare($sql);
 		$stmt->execute();
-		echo "<center>Artikel verzonden</center>";
+		//echo "<center>Artikel verzonden</center>";
 		echo "<script>";
-		echo "function Redirect() 
-		{  
-			window.location='home.php'; 
-		} 
-		setTimeout('Redirect()', 3000); ";
+		//echo "function Redirect() 
+		//{  
+		echo"	window.location='contentbeheer.php'"; 
+		//} 
+		//setTimeout('Redirect()', 3000); ";
 		echo "</script>";
 	};
 ?>

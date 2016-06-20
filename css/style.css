@@ -178,7 +178,7 @@ body.open{
 	background-color: #D8D8AE;
 	max-width: 1000px;
 	min-width: 480px;
-	margin: 170px auto 30px;
+	margin: 185px auto 30px;
 	padding: 50px 90px 40px;
 	border-radius: 12px;
 	transition:  0.7s;
@@ -263,6 +263,7 @@ body.open{
 .boxes{
 	display: inline-table;
 	margin: 0 20px 40px 0;
+	padding: 10px 0 ;
 	background-color: #D2B487;
 	max-width: 435px;
 	min-width: 306px;
@@ -281,8 +282,8 @@ body.open{
 	
 }
 																/* BOXES CONTENT */
-.boxes p, h3{
-	padding: 5px;
+.boxes div.styled{
+	padding: 0 10px;
 	border: 6px #EADC8B inset;
 	background-color: #f3f3d6;
 	border-radius: 10px;
@@ -290,13 +291,89 @@ body.open{
 	color: #881C1C;
 	min-width: 100px;
 }
-.boxes span{
+.boxes div span{
+	/*position: relative;*/
 	display: inline-block;
 	padding: 0 5px;
 	border:5px #eadc8b inset;
 	border-radius: 10px;
 	margin:0 0 10px;
-	
-}.boxes span:nth-child(5){
+	top: 100px;
+}
+.boxes div span:nth-child(2){
 	float: right;
+	/*right: 0;*/
+	margin-top:30px;
+}
+.boxes div span:nth-child(1){
+	float: left;
+	/*left: 0;*/
+	margin-top:30px;
+}
+.boxes .arti_foot{
+	width: 100%;
+	position: relative;
+}
+
+
+/* ------------------------------------ */
+#artikel_AllBox{
+	padding: 27px;
+	border: 8px #FFFFDE outset;
+	border-radius: 15px ;
+}
+
+.artikel_boxes{
+	display: inline-table;
+	margin: 0 20px 40px 0;
+	padding: 10px 0 ;
+	background-color: #D2B487;
+	/*max-width: 435px;*/
+	min-width: 90%;
+
+	border-left:39px solid;
+	border-right:39px solid;
+	border-image-repeat: round;
+	border-radius: 52px;
+
+	border-image: url('../img/rope3.png');
+	border-image-slice: 16;
+	border-image-width: 35px;
+	min-height:190px;
+	max-height: 550px;
+	/* border-image-outset: 50px; */
+	
+}
+																/* BOXES CONTENT */
+.artikel_boxes div.styled{
+	padding: 0 10px;
+	border: 6px #EADC8B inset;
+	background-color: #f3f3d6;
+	border-radius: 10px;
+	opacity: 1;
+	color: #881C1C;
+	min-width: 100px;
+}
+.artikel_boxes div span{
+	/*position: relative;*/
+	display: inline-block;
+	padding: 0 5px;
+	border:5px #eadc8b inset;
+	border-radius: 10px;
+	margin:0 0 10px;
+	top: 100px;
+}
+.artikel_boxes div span:nth-child(2){
+	float: right;
+	/*right: 0;*/
+	margin-top:30px;
+}
+.artikel_boxes div span:nth-child(1){
+	float: left;
+	/*left: 0;*/
+	margin-top:30px;
+}
+.artikel_boxes .arti_foot{
+	width: 100%;
+	position: relative;
 }

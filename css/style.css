@@ -30,6 +30,7 @@ body.open{
 	position: absolute;
 	width: 100%;
 	top: 0;
+	margin-left: -5px;
 } 
 															/* -------BANNER------- */
 .top-bar{
@@ -41,6 +42,7 @@ body.open{
 	top: 0;
 
 	background-color: #A58B68;
+	margin-left: -5px;
 }
 .hamburger{
 	/*margin: 16px 15px 0 0; */

@@ -53,6 +53,7 @@ require 'connecties\artikeldatabase.php';
 				data-cycle-loader="wait"
 				data-cycle-fx="scrollHorz"
 				data-cycle-speed="1000"
+				data-cycle-pause-on-hover="true"
 
 				data-cycle-prev="#Bl"
 				data-cycle-next="#Br"

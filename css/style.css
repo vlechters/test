@@ -150,15 +150,17 @@ body.open{
 }
 
 .menu li{													/* MENU-ITEMS */
-	margin: 0 14px;
+	margin: 0 4px;
 	text-align: center;
 	display: inline-block;
 	
-	width: 80px;
+	min-width: 80px;
 	border: inset 5px #f3f3d6;
 	border-radius: 20px;
 	padding: 10px;
-	transition: 0.4s;
+	transition: 0.4s;													/* MENU-ITEMS */
+	vertical-align: top;													/* MENU-ITEMS */
+	min-height: 70px;
 }
 .menu a{
 	/*background-color: grey;*/
@@ -191,7 +193,7 @@ body.open{
 	margin: 0 auto;
 	border: outset 6px #f3f3d6;  /*#F6F6F6*/
 	/* border: outset 6px #EADC8B; */
-	border-radius: 0px;	
+	border-radius: 0;	
 }
 																/* SLIDESHOW-DIV */
 .cycle-slideshow{
@@ -365,8 +367,9 @@ body.open{
 .artikel_boxes div span:nth-child(1){
 	float: left;
 	left: 0;
-	margin-top:30px; */
+	margin-top:30px; 
 }
+*/
 .artikel_boxes .arti_foot{
 	width: 100%;
 	position: relative;

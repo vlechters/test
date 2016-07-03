@@ -17,67 +17,79 @@
 			<a href="../../mohammad_login/src/index.php"><div class="begroeting">
 							Log In <i class="fa fa-chevron-circle-down"></i>
 						</div></a>
+
+						
 			<ul class="menu">
 				<a href="index.php">
-					<li class="home">
+					<li class ="top" >
 						<i class="fa fa-home fa-2x"></i>
 						<br>Home
 					</li>
 				</a>
-
+				
 				<a href="#">
-					<li >
+					<li class ="top">
 						<i class="fa fa-pagelines fa-2x"></i>
 						<br>Vlechten
 					</li>
 				</a>
 
 				<a href="informatie.php">
-					<li >
+					<li class ="top">
 						<i class="fa fa-building-o fa-2x"></i>
 						<br>Over <br> Ons
 					</li>
 				</a>
-
-				<a href="artikelen.php">
-					<li >
-						<i class="fa fa-camera fa-2x"></i>
-						<br>Fotogalerij
-					</li>
-				</a>
 				
 				<a href="#">
-					<li >
+					<li class ="top">
 						<i class="fa fa-newspaper-o fa-2x"></i>
 						<br>Nieuws<br>(artikelen)
 					</li>
 				</a>
 
+				<a href="artikelen.php">
+					<li class ="top">
+						<i class="fa fa-camera fa-2x"></i>
+						<br>Fotogalerij
+					</li>
+				</a>
+
 				<a href="#">
-					<li >
+					<li class ="top">
 						<i class="fa fa-calendar fa-2x"></i>
 						<br>Evenementen <br> Kalender
 					</li>
 				</a>
 
 				<a href="#">
-					<li >
+					<li class ="top">
 						<i class="fa fa-child fa-2x"></i>
 						<br>Lid <br> worden
 					</li>
 				</a>
 
 				<a href="#">
-					<li >
+					<li class ="top">
 						<i class="fa fa-commenting-o fa-2x"></i>
 						<br>Contact
 					</li>
 				</a>
+				<br>
+				<?php
+				for ($i=1; $i <= 4; $i++) { 
+					echo "<a class='dropp".$i."'>
+						<li class='bottom' >
+							<i class='fa fa-chevron-circle-down'></i>
+						</li>
+					</a>";
+				}
+				?>
 
 			</ul>
 			<!--  GATAAR DROPDOWN  -->
 			
-			<ul class="home">
+			<ul class="dropp home">
 				<li>
 					home
 				</li>
@@ -91,8 +103,8 @@
 					LINKS
 				</li>
 			</ul>
-			
-			<ul class="vlechten">
+
+			<ul class="dropp vlechten">
 				<li>
 					vlechten
 				</li>
@@ -107,9 +119,9 @@
 				</li>
 			</ul>
 
-			<ul class="over-ons">
+			<ul class="dropp over-ons">
 				<li>
-					over ons
+					over-ons
 				</li>
 				<li>
 					DE VERENIGING
@@ -124,7 +136,7 @@
 					WERKGROEPEN
 				</li>
 			</ul>
-			<ul class="nieuws">
+			<ul class="dropp nieuws">
 				<li>
 					nieuws
 				</li>

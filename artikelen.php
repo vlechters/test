@@ -12,33 +12,10 @@ if (!empty($_GET['artikel_id'])) {
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Testing livestyle</title>
 	
-									<!-- FILE-LINKSSSSSS -->
-<!-- CSS STYLE -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<link rel="stylesheet" href="FontAwesome/css/font-awesome.min.css"><!-- ICONSPACK FONT-AWESOME -->
-
-
-	
-									<!-- J-QUERY -->
-	<script src="js/jquery-2.2.4.js" type="text/javascript"></script>	
-	<script type="text/javascript" charset="utf-8">
-		$(document).ready(function(){
-
-			$('.hamburger,#sideMenuBar').click(function(){
-					$('#sideMenu').toggleClass('open');
-					$('#sideMenuBar').toggleClass('open');
-					$('body').toggleClass('open');
-			});
-
-			
-	
-		});
-	
-	</script>
-	<script src="js/jquery.cycle2.min.js" type="text/javascript"></script>	<!--SPECIAL J-QUERY VOOR SLIDER-->
+	<?php
+	include('CssLinks.php');
+	?>
 
 </head>
 									<!-- BEGIN-BODY -->

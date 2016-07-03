@@ -5,33 +5,10 @@ require 'connecties\artikeldatabase.php';
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Testing livestyle</title>
 	
-									<!-- FILE-LINKSSSSSS -->
-<!-- CSS STYLE -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<link rel="stylesheet" href="FontAwesome/css/font-awesome.min.css"><!-- ICONSPACK FONT-AWESOME -->
-
-
-	
-									<!-- J-QUERY -->
-	<script src="js/jquery-2.2.4.js" type="text/javascript"></script>	
-	<script type="text/javascript" charset="utf-8">
-		$(document).ready(function(){
-
-			$('.hamburger,#sideMenuBar').click(function(){
-					$('#sideMenu').toggleClass('open');
-					$('#sideMenuBar').toggleClass('open');
-					$('body').toggleClass('open');
-			});
-
-			
-	
-		});
-	
-	</script>
-	<script src="js/jquery.cycle2.min.js" type="text/javascript"></script>	<!--SPECIAL J-QUERY VOOR SLIDER-->
+	<?php
+	include('CssLinks.php');
+	?>
 
 </head>
 									<!-- BEGIN-BODY -->
@@ -49,11 +26,12 @@ require 'connecties\artikeldatabase.php';
 			<div class="slider-container">		<!-- BEGIN FOTO-SLIDER-->
 
 				<div class="cycle-slideshow"
+				data-cycle-swipe=true
+				data-cycle-fx=tileSlide data-cycle-tile-vertical=false
 				data-cycle-auto-height="16:9"
 				data-cycle-loader="wait"
-				data-cycle-fx="scrollHorz"
+				
 				data-cycle-speed="1000"
-				data-cycle-pause-on-hover="true"
 
 				data-cycle-prev="#Bl"
 				data-cycle-next="#Br"
@@ -62,6 +40,7 @@ require 'connecties\artikeldatabase.php';
 					<img src="img/wallpaper1.jpg">
 					<img src="img/wallpaper2.jpg">
 					<img src="img/wallpaper3.jpg">
+					<img src="img/wallpaper2.jpg">
 				</div>
 
 				<a href=# class="SlideButton" id="Bl">&lang;</a>
@@ -82,23 +61,23 @@ require 'connecties\artikeldatabase.php';
 
 			<center>
 				<div id="AllBox">
-					<div class="boxes" id="box1">
+					<!-- <div class="boxes" id="box1">
 						<div class="styled">
-							<?php
+							<?php/*
 								// Rows ophalen van DB 
 								$conn = ArtikelDatabase::getConnection();
 								$q = "SELECT auteur,titel,artikel_inhoud,datum_aangemaakt FROM artikels WHERE artikel_id = ?" ;
 								$stmt = $conn->prepare( $q );
 								$stmt->execute(array(74));
-			
+								
 								while($row = $stmt->fetch()){
 									echo "<h3>".$row['titel']."</h3>";
 									echo $row['artikel_inhoud'];
 									echo "<div class='arti_foot'><span>".$row['auteur']."</span><span>".$row['datum_aangemaakt']."</span></div>";
-								}
+								}*/
 							?>
 						</div>
-					</div>
+					</div> -->
 					<div class="boxes" id="box2">
 						<div class="styled">
 							

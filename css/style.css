@@ -112,13 +112,12 @@ body.open{
 	position: relative;
 	padding: 1px 12px 0;
 	background-color: #DCB886;
-	/*height: 82px;*/
-	max-width: 1160px;
+	height: 135px;
+	width: 1115px;
 	margin: 12px auto;
 	border: 8px #AB7729 double;
 	border-radius: 12px;
 	overflow: auto;
-	min-width: 645px;
 	transition:  0.7s;
 }
 																/* TOP-GREETING */
@@ -132,6 +131,7 @@ body.open{
 	min-width: 40px;
 	max-width: 220px;
 	background-color: #FFFFDA;
+	float: left;
 }
 .begroeting a{
 	text-decoration: none;
@@ -141,36 +141,161 @@ body.open{
 	display: inline-block;
 	padding: 0;
 	vertical-align: top;
-	margin: 10px auto 20px;
-	min-width: 600px;
-	/*float: right;*/
+	margin: 10px 10px 20px 1px;
+	float: left;
 	 /*height: 50px; */
 	/*display: none;*/
 	 /*outline: green solid; */
 }
-
-.menu li{													/* MENU-ITEMS */
-	margin: 0 4px;
+											/* MENU-ITEMS */
+.menu a:nth-child(1) li,
+.menu a:nth-child(2) li,
+.menu a:nth-child(3) li,
+.menu a:nth-child(4) li {													/* MENU-ITEMS */
+	margin: 0 2px 0;
 	text-align: center;
 	display: inline-block;
 	
-	min-width: 80px;
-	border: inset 5px #f3f3d6;
-	border-radius: 20px;
+	width: 80px;
+	
+	border-right: inset 5px #f3f3d6;
+	border-left: inset 5px #f3f3d6;
+	border-top: inset 5px #f3f3d6;
+	
+	border-top-left-radius: 31px;
+	border-top-right-radius: 31px;
+	
 	padding: 10px;
-	transition: 0.4s;													/* MENU-ITEMS */
-	vertical-align: top;													/* MENU-ITEMS */
-	min-height: 70px;
+	transition: 0.4s;
+	vertical-align: top;
+	line-height: 16px;
+	height: 60px;
+}
+
+.menu a:nth-child(5) li,
+.menu a:nth-child(6) li,
+.menu a:nth-child(7) li,
+.menu a:nth-child(8) li {
+	margin: 0 2px 0;
+	text-align: center;
+	display: inline-block;
+	
+	width: 80px;
+	
+	border: inset 5px #f3f3d6;
+	
+	border-radius: 31px;
+	
+	padding: 10px;
+	transition: 0.4s;
+	vertical-align: top;
+	line-height: 16px;
+	height: 80px;
+}
+.bottom{
+	margin: -25px 2px 0;
+	text-align: center;
+	display: inline-block;
+		
+	width: 80px;
+
+	box-shadow: 0px -7px 0px -5px #9f9f8c;
+	border-right: inset 5px #f3f3d6;
+	border-bottom: inset 3px #f3f3d6;
+	border-left: inset 5px #f3f3d6;
+	
+	border-bottom-left-radius: 31px;
+	border-bottom-right-radius: 31px;
+	
+	padding: 2px 10px 14px 10px;
+	transition: 0.4s;
+	vertical-align: top;
+	line-height: 16px;
+	min-height: 5px;
+	max-height: 5px;
+}
+
+
+.menu a:nth-child(6) li , .menu a:nth-child(15) li{
+	width: 93px;
+	padding-left: 5px;
+	padding-right: 12px;
 }
 .menu a{
-	/*background-color: grey;*/
 	color: maroon;
 	text-decoration: none;
 }
-.menu li:hover{
-	border: outset 5px #f3f3d6;
+.menu .bottom:hover{
+	border-left: outset 5px #f3f3d6;
+	border-right: outset 5px #f3f3d6;
+	border-bottom: outset 3px #f3f3d6;
 	background-color:maroon; 
 	color:#dcb886;
+}
+.menu .top:hover{
+	border-left: outset 5px #f3f3d6;
+	border-right: outset 5px #f3f3d6;
+	border-top: outset 5px #f3f3d6;
+	background-color:maroon; 
+	color:#dcb886;
+}
+
+.dropp{
+	list-style: none;
+	/* display: none; */
+	/* text-align: center; */
+}
+.home{
+	position: absolute;
+	top: 120px;
+	left: 80px;
+}
+.home li{
+	border:5px green inset;
+	margin:12px 0;
+	padding:5px;
+	border-radius: 14px;
+	
+	
+}
+.vlechten{
+	position: absolute;
+	top: 120px;
+	left: 280px;
+}
+.vlechten li{
+	border:5px green inset;
+	margin:12px 0;
+	padding:5px;
+	border-radius: 14px;
+	
+	
+}
+.over-ons{
+	position: absolute;
+	top: 120px;
+	left: 570px;
+}
+.over-ons li{
+	border:5px green inset;
+	margin:12px 0;
+	padding:5px;
+	border-radius: 14px;
+	
+	
+}
+.nieuws{
+	position: absolute;
+	top: 120px;
+	left: 740px;
+}
+.nieuws li{
+	border:5px green inset;
+	margin:12px 0;
+	padding:5px;
+	border-radius: 14px;
+	
+	
 }
 																/* -------CONTENT------- */
 .content{
